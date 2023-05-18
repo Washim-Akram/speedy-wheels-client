@@ -1,6 +1,56 @@
 import { Player } from "@lottiefiles/react-lottie-player";
+import { useContext } from "react";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
+
+  const handleRegistration = (event) => {
+    event.preventDefault();
+    const form = event.target;
+
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const photoURL = form.photoURL.value;
+
+    console.log(name, email, password, photoURL);
+
+    if (password.length < 6) {
+      Swal.fire({
+        title: "Error!",
+        text: "Password must be 6 characters long",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
+      return;
+    }
+
+    createUser(email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        Swal.fire({
+          title: "Congratulations!",
+          text: "Account created successfully",
+          icon: "success",
+          confirmButtonText: "Cool",
+        });
+        form.reset();
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        console.log(errorMessage);
+        Swal.fire({
+          title: "Error!",
+          text: { errorMessage },
+          icon: "error",
+          confirmButtonText: "OK",
+        });
+      });
+  };
+
   return (
     <div className="mt-12 mb-24">
       <div className="hero py-12 bg-base-200">
@@ -10,61 +60,75 @@ const Register = () => {
               autoplay
               loop
               src="https://assets4.lottiefiles.com/packages/lf20_pprxh53t.json"
+              // https://assets4.lottiefiles.com/packages/lf20_UW8DlCRljO.json
               style={{ height: "350px", width: "350px" }}
             ></Player>
           </div>
+
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body">
               <h1 className="text-4xl font-bold mb-2">Registration now!</h1>
               <hr className=" mb-4" />
 
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Name</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="Name"
-                  className="input input-bordered"
-                />
-              </div>
+              <form onSubmit={handleRegistration}>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Name</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                    className="input input-bordered"
+                  />
+                </div>
 
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Email</span>
-                </label>
-                <input
-                  type="email"
-                  placeholder="email"
-                  className="input input-bordered"
-                />
-              </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Email</span>
+                  </label>
+                  <input
+                    required
+                    type="email"
+                    name="email"
+                    placeholder="email"
+                    className="input input-bordered"
+                  />
+                </div>
 
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Password</span>
-                </label>
-                <input
-                  type="password"
-                  placeholder="password"
-                  className="input input-bordered"
-                />
-              </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Password</span>
+                  </label>
+                  <input
+                    required
+                    type="password"
+                    name="password"
+                    placeholder="password"
+                    className="input input-bordered"
+                  />
+                </div>
 
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Photo URL</span>
-                </label>
-                <input
-                  type="url"
-                  placeholder="Photo URL"
-                  className="input input-bordered"
-                />
-              </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Photo URL</span>
+                  </label>
+                  <input
+                    type="url"
+                    name="photoURL"
+                    placeholder="Photo URL"
+                    className="input input-bordered"
+                  />
+                </div>
 
-              <div className="form-control mt-6">
-                <button className="btn btn-primary">Registration</button>
-              </div>
+                <div className="form-control mt-6">
+                  <input
+                    type="submit"
+                    value="Registration"
+                    className="btn btn-primary"
+                  />
+                </div>
+              </form>
             </div>
           </div>
         </div>
