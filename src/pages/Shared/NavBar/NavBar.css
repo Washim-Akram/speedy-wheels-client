@@ -1,0 +1,6 @@
+a.active {
+  color: red;
+  font-weight: 500;
+  background: none;
+  border: 1px solid tomato;
+}
