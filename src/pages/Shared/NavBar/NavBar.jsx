@@ -1,8 +1,13 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import Swal from "sweetalert2";
 import logo from "../../../assets/react.svg";
+import { AuthContext } from "../../../providers/AuthProvider";
 import "./NavBar.css";
 
 const NavBar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  // console.log(user);
   const navItems = (
     <>
       <li className="tooltip" data-tip="Home">
@@ -61,6 +66,33 @@ const NavBar = () => {
       </li>
     </>
   );
+
+  const handleLogOut = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Logout!",
+    })
+      .then((result) => {
+        if (result.isConfirmed) {
+          logOut();
+          Swal.fire("Logout!", "Successfully Logout.");
+        }
+      })
+
+      .catch((error) => {
+        const errorMessage = error.message;
+        Swal.fire({
+          title: "Error!",
+          text: `${errorMessage}`,
+          icon: "error",
+          confirmButtonText: "OK",
+        });
+      });
+  };
   return (
     <div className="navbar bg-base-100 h-20 md:mt-6 container mx-auto">
       <div className="navbar-start">
@@ -108,25 +140,32 @@ const NavBar = () => {
       </div>
       <div className="navbar-end">
         <div className="mr-5">
-          <button className="btn btn-active tooltip" data-tip="Log Out">
-            Log Out
-          </button>
-
-          <Link to="/login">
-            <button className="btn btn-active tooltip" data-tip="Login">
-              Login
+          {user?.email ? (
+            <button
+              onClick={handleLogOut}
+              className="btn btn-active tooltip"
+              data-tip="Log Out"
+            >
+              Log Out
             </button>
-          </Link>
+          ) : (
+            <Link to="/login">
+              <button className="btn btn-active tooltip" data-tip="Login">
+                Login
+              </button>
+            </Link>
+          )}
         </div>
-        <div className="avatar online">
-          <div className="w-14 rounded-full cursor-pointer">
-            <img
-              src="/images/stock/photo-1534528741775-53994a69daeb.jpg"
-              className="tooltip"
-              data-tip="User"
-            />
+        {user?.email && (
+          <div className="avatar online">
+            <div className="w-14 rounded-full cursor-pointer">
+              <img
+                src={user?.photoURL && user?.photoURL}
+                title={user?.displayName && user?.displayName}
+              />
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
