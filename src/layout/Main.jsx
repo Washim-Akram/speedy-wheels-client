@@ -4,11 +4,15 @@ import NavBar from "../pages/Shared/NavBar/NavBar";
 
 const Main = () => {
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <NavBar></NavBar>
-      <Outlet></Outlet>
-      <Footer></Footer>
-    </>
+      <div className="flex-grow">
+        <Outlet></Outlet>
+      </div>
+      <div className="mt-auto">
+        <Footer></Footer>
+      </div>
+    </div>
   );
 };
 
