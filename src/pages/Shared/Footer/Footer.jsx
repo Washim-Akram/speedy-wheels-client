@@ -3,7 +3,7 @@ import logo from "../../../assets/react.svg";
 
 const Footer = () => {
   return (
-    <div className=" bg-base-200 text-base-content">
+    <div className=" bg-base-200 text-base-content py-5">
       <div className="container mx-auto">
         <footer className="footer p-10">
           <div>
