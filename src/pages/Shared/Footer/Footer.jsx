@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../../../assets/react.svg";
+import logo from "../../../assets/speedy-wheels.png";
 
 const Footer = () => {
   return (
@@ -37,7 +37,7 @@ const Footer = () => {
         <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
           <div className="items-center grid-flow-col">
             <Link to="/" className="tooltip" data-tip="Speedy Wheels">
-              <img src={logo} alt="Company Logo" />
+              <img src={logo} alt="Company Logo" className="h-24 w-24" />
             </Link>
             <p>
               Speedy Wheels Ltd. <br />

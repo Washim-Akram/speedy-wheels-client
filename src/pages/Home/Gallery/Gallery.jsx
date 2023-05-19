@@ -92,7 +92,7 @@ const Gallery = () => {
   };
 
   return (
-    <div className="container mx-auto mt-32 mb-24">
+    <div className="container mx-auto mt-40">
       <div className="divider mb-12">
         <h2 className="text-center text-2xl md:text-4xl">
           Our Awesome Gallery!

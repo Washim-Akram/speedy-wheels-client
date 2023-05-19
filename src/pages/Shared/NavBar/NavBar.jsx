@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Swal from "sweetalert2";
-import logo from "../../../assets/react.svg";
+import logo from "../../../assets/speedy-wheels.png";
 import { AuthContext } from "../../../providers/AuthProvider";
 import "./NavBar.css";
 
@@ -125,7 +125,7 @@ const NavBar = () => {
           className="normal-case text-xl tooltip tooltip-bottom"
           data-tip="Speedy Wheels"
         >
-          <img src={logo} alt="Logo" />
+          <img src={logo} alt="Logo" className="h-24 w-24 rounded-full" />
         </Link>
         <Link
           to="/"
