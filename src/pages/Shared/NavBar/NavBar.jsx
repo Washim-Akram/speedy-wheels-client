@@ -45,7 +45,7 @@ const NavBar = () => {
 
       <li className="tooltip" data-tip="Add a Toy">
         <NavLink
-          to="/add-toy"
+          to="/add-a-toy"
           className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "active" : ""
           }
