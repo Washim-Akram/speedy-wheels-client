@@ -75,6 +75,7 @@ const AddAToy = () => {
                 <span className="label-text">Picture URL</span>
               </label>
               <input
+                required
                 type="url"
                 name="pictureURL"
                 placeholder="Picture URL"
@@ -87,6 +88,7 @@ const AddAToy = () => {
                 <span className="label-text">Name</span>
               </label>
               <input
+                required
                 type="text"
                 name="name"
                 placeholder="Name"
@@ -123,13 +125,15 @@ const AddAToy = () => {
                 <span className="label-text">Choose Category</span>
               </label>
               <select
+                required
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
                 className="input input-bordered"
               >
-                <option>Sports Car</option>
-                <option>Regular Car</option>
-                <option>Truck</option>
+                <option></option>
+                <option value="regular">regular</option>
+                <option value="sports">sports</option>
+                <option value="truck">truck</option>
               </select>
             </div>
 
@@ -138,6 +142,7 @@ const AddAToy = () => {
                 <span className="label-text">Price</span>
               </label>
               <input
+                required
                 type="number"
                 name="price"
                 placeholder="Price"
@@ -150,6 +155,7 @@ const AddAToy = () => {
                 <span className="label-text">Rating</span>
               </label>
               <input
+                required
                 type="number"
                 name="rating"
                 placeholder="Rating"
@@ -162,6 +168,7 @@ const AddAToy = () => {
                 <span className="label-text">Available Quantity</span>
               </label>
               <input
+                required
                 type="number"
                 name="quantity"
                 placeholder="Available Quantity"
@@ -170,6 +177,7 @@ const AddAToy = () => {
             </div>
           </div>
           <textarea
+            required
             name="description"
             placeholder="Detail Description"
             className="textarea textarea-bordered textarea-lg w-full mt-8"
