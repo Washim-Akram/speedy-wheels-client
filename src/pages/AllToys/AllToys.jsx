@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const AllToys = () => {
   const cars = useLoaderData();
@@ -32,7 +32,9 @@ const AllToys = () => {
                   <td>{car?.price}</td>
                   <td>{car?.quantity}</td>
                   <td>
-                    <button className="btn">View Details</button>
+                    <Link to={`/car/${car._id}`}>
+                      <button className="btn">View Details</button>
+                    </Link>
                   </td>
                 </tr>
               ))}
