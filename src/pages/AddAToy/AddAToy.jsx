@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const AddAToy = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
+  const { user } = useContext(AuthContext);
+  console.log(user);
 
   const handleAddAToy = (event) => {
     event.preventDefault();
@@ -10,8 +13,8 @@ const AddAToy = () => {
 
     const pictureURL = form.pictureURL.value;
     const name = form.name.value;
-    const sellerName = form.sellerName.value;
-    const sellerEmail = form.sellerEmail.value;
+    const sellerName = user?.displayName;
+    const sellerEmail = user?.email;
     const category = selectedCategory;
     const price = form.price.value;
     const rating = form.rating.value;
@@ -101,9 +104,10 @@ const AddAToy = () => {
                 <span className="label-text">Seller Name</span>
               </label>
               <input
+                required
                 type="text"
                 name="sellerName"
-                placeholder="Seller Name"
+                defaultValue={user?.displayName}
                 className="input input-bordered"
               />
             </div>
@@ -113,9 +117,10 @@ const AddAToy = () => {
                 <span className="label-text">Seller Email</span>
               </label>
               <input
+                required
                 type="email"
                 name="sellerEmail"
-                placeholder="Seller Email"
+                defaultValue={user?.email}
                 className="input input-bordered"
               />
             </div>
