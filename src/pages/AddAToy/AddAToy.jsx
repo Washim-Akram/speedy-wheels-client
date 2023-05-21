@@ -16,7 +16,7 @@ const AddAToy = () => {
 
     const pictureURL = form.pictureURL.value;
     const name = form.name.value;
-    const sellerName = user?.displayName;
+    const sellerName = form.sellerName.value;
     const sellerEmail = user?.email;
     const category = selectedCategory;
     const price = form.price.value;
