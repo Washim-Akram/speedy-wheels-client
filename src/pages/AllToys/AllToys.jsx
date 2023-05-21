@@ -1,8 +1,12 @@
 import { Link, useLoaderData } from "react-router-dom";
+import useSetTitle from "../../hooks/useSetTitle";
 
 const AllToys = () => {
   const cars = useLoaderData();
   console.log(cars);
+
+  useSetTitle("All Toys");
+
   return (
     <div className="container mx-auto mt-20 mb-32">
       <div className="divider mb-12">

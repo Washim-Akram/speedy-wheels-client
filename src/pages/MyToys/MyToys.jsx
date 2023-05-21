@@ -1,11 +1,14 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import useSetTitle from "../../hooks/useSetTitle";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myCars, setMyCars] = useState([]);
+
+  useSetTitle("My Toys");
 
   const url = `http://localhost:5000/my-cars?email=${user?.email}`;
 

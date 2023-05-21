@@ -2,10 +2,13 @@ import { Player } from "@lottiefiles/react-lottie-player";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import useSetTitle from "../../hooks/useSetTitle";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
+
+  useSetTitle("Register");
 
   const handleRegistration = (event) => {
     event.preventDefault();

@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import useSetTitle from "../../hooks/useSetTitle";
 
 const ViewDetails = () => {
   const specificCar = useLoaderData();
@@ -12,6 +13,9 @@ const ViewDetails = () => {
     quantity,
     description,
   } = specificCar;
+
+  useSetTitle("View Details");
+
   return (
     <div className="container mx-auto mt-20 mb-32">
       <div className="bg-base-200 p-10 md:p-16">

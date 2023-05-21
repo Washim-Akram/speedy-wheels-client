@@ -1,4 +1,7 @@
+import useSetTitle from "../../hooks/useSetTitle";
+
 const Blogs = () => {
+  useSetTitle("Blogs");
   return (
     <div className="container mx-auto mt-16 mb-24">
       <h2 className="text-center text-5xl mb-12 underline">

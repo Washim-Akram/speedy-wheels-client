@@ -1,11 +1,14 @@
 import { useContext, useState } from "react";
 import Swal from "sweetalert2";
+import useSetTitle from "../../hooks/useSetTitle";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const AddAToy = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const { user } = useContext(AuthContext);
   console.log(user);
+
+  useSetTitle("Add A Toy");
 
   const handleAddAToy = (event) => {
     event.preventDefault();

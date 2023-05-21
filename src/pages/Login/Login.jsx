@@ -3,10 +3,13 @@ import { useContext } from "react";
 // import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import useSetTitle from "../../hooks/useSetTitle";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
   const { login, signInWithGoogle } = useContext(AuthContext);
+
+  useSetTitle("Login");
 
   const navigate = useNavigate();
   const location = useLocation();
