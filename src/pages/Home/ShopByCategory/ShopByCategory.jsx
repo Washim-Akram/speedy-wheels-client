@@ -39,7 +39,7 @@ const ShopByCategory = () => {
   };
 
   return (
-    <div className="container mx-auto mt-40 mb-40">
+    <div className="container mx-auto mt-40">
       <div className="divider mb-12">
         <h2 className="text-center text-2xl md:text-4xl">Shop By Category</h2>
       </div>
