@@ -48,7 +48,7 @@ const AddAToy = () => {
       description,
     };
 
-    fetch("http://localhost:5000/cars", {
+    fetch("https://speedy-wheels-server-three.vercel.app/cars", {
       method: "POST",
       headers: {
         "content-type": "application/json",

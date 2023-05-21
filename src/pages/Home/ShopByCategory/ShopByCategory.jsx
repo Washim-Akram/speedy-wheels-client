@@ -11,7 +11,7 @@ const ShopByCategory = () => {
   const navigate = useNavigate();
 
   const handleCategory = (category) => {
-    fetch(`http://localhost:5000/cars/${category}`)
+    fetch(`https://speedy-wheels-server-three.vercel.app/cars/${category}`)
       .then((res) => res.json())
       .then((data) => {
         setCategories(data);

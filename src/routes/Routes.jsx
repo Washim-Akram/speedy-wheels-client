@@ -25,7 +25,8 @@ const router = createBrowserRouter([
       {
         path: "/all-toys",
         element: <AllToys></AllToys>,
-        loader: () => fetch("http://localhost:5000/cars"),
+        loader: () =>
+          fetch("https://speedy-wheels-server-three.vercel.app/cars"),
       },
       {
         path: "/my-toys",
@@ -42,12 +43,18 @@ const router = createBrowserRouter([
             <ViewDetails></ViewDetails>
           </PrivateRoute>
         ),
-        loader: ({ params }) => fetch(`http://localhost:5000/car/${params.id}`),
+        loader: ({ params }) =>
+          fetch(
+            `https://speedy-wheels-server-three.vercel.app/car/${params.id}`
+          ),
       },
       {
         path: "/update/:id",
         element: <UpdateToy></UpdateToy>,
-        loader: ({ params }) => fetch(`http://localhost:5000/car/${params.id}`),
+        loader: ({ params }) =>
+          fetch(
+            `https://speedy-wheels-server-three.vercel.app/car/${params.id}`
+          ),
       },
       {
         path: "/register",

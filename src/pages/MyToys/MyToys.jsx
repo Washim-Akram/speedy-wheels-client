@@ -10,7 +10,7 @@ const MyToys = () => {
 
   useSetTitle("My Toys");
 
-  const url = `http://localhost:5000/my-cars?email=${user?.email}`;
+  const url = `https://speedy-wheels-server-three.vercel.app/my-cars?email=${user?.email}`;
 
   useEffect(() => {
     fetch(url)
@@ -31,7 +31,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/cars/${_id}`, {
+        fetch(`https://speedy-wheels-server-three.vercel.app/cars/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

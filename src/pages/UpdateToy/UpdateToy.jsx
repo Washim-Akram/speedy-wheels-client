@@ -23,7 +23,7 @@ const UpdateToy = () => {
       quantity,
       description,
     };
-    fetch(`http://localhost:5000/cars/${_id}`, {
+    fetch(`https://speedy-wheels-server-three.vercel.app/cars/${_id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
