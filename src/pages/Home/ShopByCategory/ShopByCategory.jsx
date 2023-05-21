@@ -1,10 +1,14 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const ShopByCategory = () => {
   const [categories, setCategories] = useState([]);
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleCategory = (category) => {
     fetch(`http://localhost:5000/cars/${category}`)
@@ -12,6 +16,26 @@ const ShopByCategory = () => {
       .then((data) => {
         setCategories(data);
       });
+  };
+
+  const handleViewDetails = (_id) => {
+    if (user?.email) {
+      return navigate(_id);
+    }
+
+    Swal.fire({
+      title: "Information!",
+      text: "You have to log in first to view details",
+      icon: "info",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "OK",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        navigate(_id);
+      }
+    });
   };
 
   return (
@@ -42,11 +66,14 @@ const ShopByCategory = () => {
                     <p className="font-medium">Price : ${category?.price}</p>
                     <p className="font-medium">Ratings : {category?.rating}</p>
                     <div className="card-actions justify-end">
-                      <Link to={`/car/${category._id}`}>
-                        <button className="btn btn-primary">
-                          View Details
-                        </button>
-                      </Link>
+                      <button
+                        onClick={() =>
+                          handleViewDetails(`/car/${category._id}`)
+                        }
+                        className="btn btn-primary"
+                      >
+                        View Details
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -69,11 +96,14 @@ const ShopByCategory = () => {
                     <p className="font-medium">Price : ${category?.price}</p>
                     <p className="font-medium">Ratings : {category?.rating}</p>
                     <div className="card-actions justify-end">
-                      <Link to={`/car/${category._id}`}>
-                        <button className="btn btn-primary">
-                          View Details
-                        </button>
-                      </Link>
+                      <button
+                        onClick={() =>
+                          handleViewDetails(`/car/${category._id}`)
+                        }
+                        className="btn btn-primary"
+                      >
+                        View Details
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -96,11 +126,14 @@ const ShopByCategory = () => {
                     <p className="font-medium">Price : ${category?.price}</p>
                     <p className="font-medium">Ratings : {category?.rating}</p>
                     <div className="card-actions justify-end">
-                      <Link to={`/car/${category._id}`}>
-                        <button className="btn btn-primary">
-                          View Details
-                        </button>
-                      </Link>
+                      <button
+                        onClick={() =>
+                          handleViewDetails(`/car/${category._id}`)
+                        }
+                        className="btn btn-primary"
+                      >
+                        View Details
+                      </button>
                     </div>
                   </div>
                 </div>
