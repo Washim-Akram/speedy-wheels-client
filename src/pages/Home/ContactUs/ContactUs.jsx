@@ -1,12 +1,24 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import Swal from "sweetalert2";
 
 const ContactUs = () => {
   useEffect(() => {
     AOS.init();
     AOS.refresh();
   }, []);
+
+  const handleContact = (event) => {
+    event.preventDefault();
+    Swal.fire({
+      title: "Thanks!",
+      text: "We are successfully received your message.",
+      icon: "success",
+      confirmButtonText: "Cool",
+    });
+    event.target.reset();
+  };
 
   return (
     <div className="mt-60 mb-40">
@@ -37,12 +49,13 @@ const ContactUs = () => {
           </div>
           <div className="divider lg:divider-horizontal"></div>
           <div data-aos="zoom-in-left" className=" w-full">
-            <form>
+            <form onSubmit={handleContact}>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Your Name</span>
                 </label>
                 <input
+                  required
                   type="text"
                   name="name"
                   placeholder="Name"
@@ -55,6 +68,7 @@ const ContactUs = () => {
                   <span className="label-text">Your Email</span>
                 </label>
                 <input
+                  required
                   type="email"
                   name="email"
                   placeholder="Email"
@@ -63,6 +77,7 @@ const ContactUs = () => {
               </div>
 
               <textarea
+                required
                 name="message"
                 placeholder="Your Messages"
                 className="textarea textarea-bordered textarea-lg w-full mt-8"
