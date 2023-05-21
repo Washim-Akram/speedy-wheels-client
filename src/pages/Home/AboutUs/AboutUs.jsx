@@ -10,7 +10,7 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <div className="my-40">
+    <div className="mt-40">
       <h2 className="text-center font-bold text-3xl md:text-4xl mb-5">
         About Us
       </h2>
