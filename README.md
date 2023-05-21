@@ -2,7 +2,7 @@
 
 ## Live Link
 
-Hosted in Firebase -> [SpeedyWheels]()
+Hosted in Firebase -> [SpeedyWheels](https://speedy-wheels-20484.web.app/)
 
 ### Best features of our project
 
