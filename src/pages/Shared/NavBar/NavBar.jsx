@@ -32,27 +32,31 @@ const NavBar = () => {
         </NavLink>
       </li>
 
-      <li className="tooltip" data-tip="My Toys">
-        <NavLink
-          to="/my-toys"
-          className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "active" : ""
-          }
-        >
-          My Toys
-        </NavLink>
-      </li>
+      {user?.email && (
+        <li className="tooltip" data-tip="My Toys">
+          <NavLink
+            to="/my-toys"
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "active" : ""
+            }
+          >
+            My Toys
+          </NavLink>
+        </li>
+      )}
 
-      <li className="tooltip" data-tip="Add a Toy">
-        <NavLink
-          to="/add-a-toy"
-          className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "active" : ""
-          }
-        >
-          Add a Toy
-        </NavLink>
-      </li>
+      {user?.email && (
+        <li className="tooltip" data-tip="Add a Toy">
+          <NavLink
+            to="/add-a-toy"
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "active" : ""
+            }
+          >
+            Add a Toy
+          </NavLink>
+        </li>
+      )}
 
       <li className="tooltip" data-tip="Blogs">
         <NavLink

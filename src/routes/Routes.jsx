@@ -10,6 +10,7 @@ import MyToys from "../pages/MyToys/MyToys";
 import Register from "../pages/Register/Register";
 import UpdateToy from "../pages/UpdateToy/UpdateToy";
 import ViewDetails from "../pages/ViewDetails/ViewDetails";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -28,11 +29,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/my-toys",
-        element: <MyToys></MyToys>,
+        element: (
+          <PrivateRoute>
+            <MyToys></MyToys>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/car/:id",
-        element: <ViewDetails></ViewDetails>,
+        element: (
+          <PrivateRoute>
+            <ViewDetails></ViewDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) => fetch(`http://localhost:5000/car/${params.id}`),
       },
       {
@@ -50,7 +59,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/add-a-toy",
-        element: <AddAToy></AddAToy>,
+        element: (
+          <PrivateRoute>
+            <AddAToy></AddAToy>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/blogs",

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
@@ -41,7 +42,11 @@ const ShopByCategory = () => {
                     <p className="font-medium">Price : ${category?.price}</p>
                     <p className="font-medium">Ratings : {category?.rating}</p>
                     <div className="card-actions justify-end">
-                      <button className="btn btn-primary">View Details</button>
+                      <Link to={`/car/${category._id}`}>
+                        <button className="btn btn-primary">
+                          View Details
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -64,7 +69,11 @@ const ShopByCategory = () => {
                     <p className="font-medium">Price : ${category?.price}</p>
                     <p className="font-medium">Ratings : {category?.rating}</p>
                     <div className="card-actions justify-end">
-                      <button className="btn btn-primary">View Details</button>
+                      <Link to={`/car/${category._id}`}>
+                        <button className="btn btn-primary">
+                          View Details
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -87,7 +96,11 @@ const ShopByCategory = () => {
                     <p className="font-medium">Price : ${category?.price}</p>
                     <p className="font-medium">Ratings : {category?.rating}</p>
                     <div className="card-actions justify-end">
-                      <button className="btn btn-primary">View Details</button>
+                      <Link to={`/car/${category._id}`}>
+                        <button className="btn btn-primary">
+                          View Details
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
