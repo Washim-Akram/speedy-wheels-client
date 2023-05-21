@@ -16,18 +16,23 @@ const Blogs = () => {
             </h2>
             <div className="divider"></div>
             <p className="text-justify font-light" style={{ fontSize: "18px" }}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-              harum exercitationem quasi et obcaecati eos ullam quaerat fuga quo
-              quos. Veritatis voluptatibus laborum qui inventore est eos,
-              quibusdam ex sapiente nam at neque, enim itaque odit architecto.
-              Ab, eveniet aliquid laborum neque, quod quo eos, dolorem
-              distinctio beatae doloremque itaque explicabo quaerat at doloribus
-              magnam sapiente eaque velit eum! Explicabo illum in numquam
-              architecto quasi laudantium, nisi consequatur ullam fugit eum
-              quidem quod animi laboriosam adipisci eveniet tempora. Minima unde
-              quia optio iusto reiciendis itaque tempore facere, aliquam
-              repudiandae vero veritatis mollitia magni aut distinctio, eius est
-              dolor reprehenderit! Nihil.
+              An access token is a credential that is used by a server to verify
+              their users.Access token has short live or time period, when they
+              are given by the server.
+              <br />
+              <br />
+              On the other side, a refresh token is also a credential given by
+              the server when authentication process is running. its has long
+              live or time.
+              <br />
+              <br />
+              We can store access token and refresh token on the client-side in
+              <br />
+              1. Http only cookie
+              <br />
+              2. local storage
+              <br />
+              3. session storage
             </p>
           </div>
         </div>
@@ -36,18 +41,18 @@ const Blogs = () => {
             <h2 className="card-title">Compare SQL and NoSQL databases?</h2>
             <div className="divider"></div>
             <p className="text-justify font-light" style={{ fontSize: "18px" }}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-              harum exercitationem quasi et obcaecati eos ullam quaerat fuga quo
-              quos. Veritatis voluptatibus laborum qui inventore est eos,
-              quibusdam ex sapiente nam at neque, enim itaque odit architecto.
-              Ab, eveniet aliquid laborum neque, quod quo eos, dolorem
-              distinctio beatae doloremque itaque explicabo quaerat at doloribus
-              magnam sapiente eaque velit eum! Explicabo illum in numquam
-              architecto quasi laudantium, nisi consequatur ullam fugit eum
-              quidem quod animi laboriosam adipisci eveniet tempora. Minima unde
-              quia optio iusto reiciendis itaque tempore facere, aliquam
-              repudiandae vero veritatis mollitia magni aut distinctio, eius est
-              dolor reprehenderit! Nihil.
+              SQL(Structured Query Language) and NoSQL(Not Only SQL) is two
+              different type of database management system.
+              <br />
+              <br />
+              Data Model: SQL database is Structure data into table format. on
+              the other hand, NoSQL database is Structure their data into key
+              value pair or document based.
+              <br />
+              <br />
+              Language: SQL database use SQL Language for manipulating data.
+              other side, NoSQL database have their own Query language or APIs
+              to manipulate data.
             </p>
           </div>
         </div>
@@ -56,18 +61,14 @@ const Blogs = () => {
             <h2 className="card-title">What is express js? What is Nest JS?</h2>
             <div className="divider"></div>
             <p className="text-justify font-light" style={{ fontSize: "18px" }}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-              harum exercitationem quasi et obcaecati eos ullam quaerat fuga quo
-              quos. Veritatis voluptatibus laborum qui inventore est eos,
-              quibusdam ex sapiente nam at neque, enim itaque odit architecto.
-              Ab, eveniet aliquid laborum neque, quod quo eos, dolorem
-              distinctio beatae doloremque itaque explicabo quaerat at doloribus
-              magnam sapiente eaque velit eum! Explicabo illum in numquam
-              architecto quasi laudantium, nisi consequatur ullam fugit eum
-              quidem quod animi laboriosam adipisci eveniet tempora. Minima unde
-              quia optio iusto reiciendis itaque tempore facere, aliquam
-              repudiandae vero veritatis mollitia magni aut distinctio, eius est
-              dolor reprehenderit! Nihil.
+              Express js : Express js is a framework for Node.js. Node.js is a
+              javascript runtime. express js is minimal and flexible framework
+              for node.js. Express js by default provide us routing, middleware
+              etc.
+              <br />
+              <br />
+              Nest JS : Nest js also a node js framework. it built on top of
+              express.js and inspired by angular.js and typescript.
             </p>
           </div>
         </div>
@@ -78,18 +79,16 @@ const Blogs = () => {
             </h2>
             <div className="divider"></div>
             <p className="text-justify font-light" style={{ fontSize: "18px" }}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-              harum exercitationem quasi et obcaecati eos ullam quaerat fuga quo
-              quos. Veritatis voluptatibus laborum qui inventore est eos,
-              quibusdam ex sapiente nam at neque, enim itaque odit architecto.
-              Ab, eveniet aliquid laborum neque, quod quo eos, dolorem
-              distinctio beatae doloremque itaque explicabo quaerat at doloribus
-              magnam sapiente eaque velit eum! Explicabo illum in numquam
-              architecto quasi laudantium, nisi consequatur ullam fugit eum
-              quidem quod animi laboriosam adipisci eveniet tempora. Minima unde
-              quia optio iusto reiciendis itaque tempore facere, aliquam
-              repudiandae vero veritatis mollitia magni aut distinctio, eius est
-              dolor reprehenderit! Nihil.
+              Mongodb is a database system to store and manipulate data. In
+              MongoDB, aggregate is a function that is used to advanced data
+              operations and collections. It allow us to process and manipulate
+              data in flexible and powerful way.
+              <br />
+              <br />
+              The aggregate function takes an array of stages as its argument.
+              which stage is refers to each operation. the stages are executed
+              one by one in order and the one stage output become the next stage
+              input.
             </p>
           </div>
         </div>
